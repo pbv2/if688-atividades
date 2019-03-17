@@ -19,7 +19,7 @@ letter       = [A-Za-z]
 digits       = [0-9]
 alphanumeric = {letter} | {digits}
 ws           = [\n\t\r\f" "]
-com          = ([//].*) | ([/*](.*\n*\t*\r*\f*)*[*/])
+com          = (\/\/.*) | (\/*(.*\n*\t*\r*\f*)*\*\/)
 res          = (boolean | class | public | extends | static | void | main | String | int | while | if | else | return | length | true | false | this | new | System.out.println)
 op           = ("&&" | "<" | "==" | "!=" | "+" | "-" | "*" | "!")
 del          = (";" | "." | "," | "=" | "(" | ")" | "{" | "}" | "[" | "]")
@@ -30,11 +30,11 @@ int          = ([1-9]{digits}* | "0")
 
 {ws}  {/* Ignorar whitespace. */}
 {com} {/* Ignorar comments. */}
-{res} {System.out.println("Token eh do tipo 'reserved': '"+yytext()+"' na linha: "+yyline+" e coluna: "+yycolumn);}
-{op}  {System.out.println("Token eh do tipo 'operator': '"+yytext()+"' na linha: "+yyline+" e coluna: "+yycolumn);}
-{del} {System.out.println("Token eh do tipo 'delimiter': '"+yytext()+"' na linha: "+yyline+" e coluna: "+yycolumn);}
-{id}  {System.out.println("Token eh do tipo 'identifier': '"+yytext()+"' na linha: "+yyline+" e coluna: "+yycolumn);}
-{int} {System.out.println("Token eh do tipo 'integer': '"+yytext()+"' na linha: "+yyline+" e coluna: "+yycolumn);}
+{res} {System.out.println("token gerado foi um reservado: '"+yytext()+"' na linha: "+yyline+", coluna: "+yycolumn);}
+{op}  {System.out.println("token gerado foi um operador: '"+yytext()+"' na linha: "+yyline+", coluna: "+yycolumn);}
+{del} {System.out.println("token gerado foi um delimitador: '"+yytext()+"' na linha: "+yyline+", coluna: "+yycolumn);}
+{id}  {System.out.println("token gerado foi um id: '"+yytext()+"' na linha: "+yyline+", coluna: "+yycolumn);}
+{int} {System.out.println("token gerado foi um integer: '"+yytext()+"' na linha: "+yyline+", coluna: "+yycolumn);}
 
 /* Insira as regras l�xicas no espa�o acima */     
      
