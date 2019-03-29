@@ -16,9 +16,11 @@ import br.ufpe.cin.if688.table.LL1Key;
 import br.ufpe.cin.if688.table.NotLL1Exception;
 import br.ufpe.cin.if688.table.Table;
 import junit.framework.TestCase;
+import org.junit.Test;
 
 public class TableTest extends TestCase {
 
+	@Test
 	public void testTableG1() throws NotLL1Exception {
 		/*
 		 * Gramática de exemplo:
