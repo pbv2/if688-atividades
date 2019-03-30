@@ -146,8 +146,7 @@ public class FollowSetTest extends TestCase {
 		expected.get(B).add(e);
 
 		expected.get(A).add(d);
-		System.out.println(expected);
-		System.out.println(follow);
+		
 		assertEquals(expected, follow);
 	}
 
