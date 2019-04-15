@@ -55,7 +55,7 @@ public class IntAndTableVisitor implements IVisitor<IntAndTable> {
 	}
 	
 	public double searchId(Table t, String id) {
-		if(id == t.id) {
+		if(id.equals(t.id)) {
 			return t.value;
 		}else {
 			return searchId(t.tail, id);
@@ -112,4 +112,4 @@ public class IntAndTableVisitor implements IVisitor<IntAndTable> {
 	}
 
 
-}
+}	

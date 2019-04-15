@@ -60,7 +60,7 @@ public class Interpreter implements IVisitor<Table> {
 	public Table visit(EseqExp e) {
 		IntAndTable aux = new IntAndTableVisitor(this.t).visit(e);
 		double result = aux.result;
-
+		this.t = aux.table;
 		return new Table("id", result, this.t);
 	}
 
